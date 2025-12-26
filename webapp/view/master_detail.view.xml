@@ -87,7 +87,7 @@
 
       <masterPages>
         <Page id="master" title="Orders">
-          <List id="OrderList" items="{/Orders}" itemPress="onListPress">
+          <List id="OrderList" items="{/Orders}" itemPress="onListPress" updateFinished="onUpdateFinished">
             <items>        
               <StandardListItem id="_IDGenStandardListItem" title="{OrderID}" type="Navigation"/>              
             </items>
