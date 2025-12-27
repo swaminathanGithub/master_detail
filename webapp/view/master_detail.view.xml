@@ -18,7 +18,7 @@
       
       <detailPages>     
          <Page id="orderDetail" title="Order Details" >
-            <Table id="orderTable" items="{/Order_Details}" >
+            <Table id="orderTable" items="{/Order_Details}" updateFinished="onUpdateFinished" updateStarted="onUpdateStarted">
                 
                 <columns>
                     <Column id="_IDGenColum0" >
