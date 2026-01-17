@@ -62,8 +62,8 @@ sap.ui.define([
 
 
     },
-    onUpdateFinished: function (oEvent) {
-      sap.ui.core.BusyIndicator.hide();
+    onUpdateFinished: function (oEvent) {      
+      sap.ui.core.BusyIndicator.show(0);  
       var oBinding = oEvent.getSource().getBinding("items");
       if (oBinding) {
         var aContexts = oBinding.getCurrentContexts();
@@ -77,10 +77,14 @@ sap.ui.define([
        this.byId("orderTable").getBinding("items").filter([oFilter], FilterType.Application);
        //this.getSplitContObj().to(this.createId("orderDetail"));            
 
+       sap.ui.core.BusyIndicator.hide();  
        this.getOwnerComponent().getModel().attachBatchRequestCompleted(() => 
         {
           this.byId("orderTable").setBusy(false);
         });
+      
+      
+      
 
     }
 
